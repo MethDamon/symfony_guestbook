@@ -1,0 +1,25 @@
+{% extends '::base.html.twig' %}
+{% block title 'Symfony Guestbook' %}
+{% block body %}
+	<div id="header"
+	 style="
+           	float: left; 
+           	background: #515151;
+           	width: 100%;
+           	position: fixed;
+          	margin-left: auto;
+          	margin-right: auto;
+          	color: #FFE5EA;
+          	text-align: center;
+           	">
+			<h2>Guestbook</h2> 	
+           	
+        	<div>
+        		{{ form_start(form) }}
+        		{{ form_widget(form) }}
+        		{{ form_end(form) }}
+            </div>
+            </div>
+	{% block post_list %}
+	{% endblock %}
+{% endblock %}

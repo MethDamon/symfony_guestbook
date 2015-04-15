@@ -1,0 +1,7 @@
+home:
+   path: /
+   defaults: {_controller: "GuestBookBundle:Default:index" }
+   
+post:
+  prefix: /posts
+  resource: "@GuestBookBundle/Resources/config/post_routing.yml"

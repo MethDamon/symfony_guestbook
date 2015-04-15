@@ -1,0 +1,19 @@
+{% extends 'GuestBookBundle:Default:base_guestbook.html.twig' %} 
+
+{% block post_list %} 
+
+	{% for Post in posts %}
+		<div class="entry">
+			<div id="preview">
+				{{ Entry.name }}
+				{{ Entry.email }}
+				{{ Entry.text|slice(0,50)}}
+			</div>
+                <form action={{ path('delete')}} method="">
+				<input type="submit">
+					Delete
+				</input>
+			</form>
+		</div>
+{% endfor %} 
+{% endblock %}

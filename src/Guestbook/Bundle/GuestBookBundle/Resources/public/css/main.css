@@ -1,0 +1,12 @@
+.content{
+    margin:0px;
+    background:#000;
+}
+
+#header {
+    height:50px;
+    background:#515151;
+    border:1px solid #000000;
+    width:960px;
+    margin:0px auto;
+}
