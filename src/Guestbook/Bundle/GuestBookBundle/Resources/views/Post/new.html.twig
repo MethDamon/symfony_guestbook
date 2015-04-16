@@ -1,0 +1,13 @@
+
+<h1>Create a new Post</h1>
+
+<form action="{{ path('create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <input type="submit" value="Create"></input>
+    </p>
+</form>
+        <a href="{{ path('home') }}">
+            Back
+        </a>
+</ul>

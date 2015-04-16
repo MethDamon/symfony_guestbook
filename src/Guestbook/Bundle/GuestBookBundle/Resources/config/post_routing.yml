@@ -1,15 +1,22 @@
 
-show:
-  path: /{id}/
-  defaults: {_controller: "GuestBookBundle:Post:show"}
-  methods: [GET]
+
+new:
+  path: /new
+  defaults: {_controller: "GuestBookBundle:Post:new"}
 
 create:
-  path: /
+  path: /create
   defaults: {_controller: "GuestBookBundle:Post:create"}
   methods: [POST]
   
-edit:
-  path: /{id}
+delete:
+  path: /delete/{id}
   defaults: {_controller: "GuestBookBundle:Post:delete"}
-  methods: [DELETE]
+  methods: [POST]
+
+show:
+  path: /show/{id}
+  defaults: {_controller: "GuestBookBundle:Post:show"}
+  methods: [GET]
+  
+ 

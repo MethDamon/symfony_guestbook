@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Post
 {
     /**
-     * @var integer
+     * @var integer $id
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -22,14 +22,14 @@ class Post
     private $id;
 
     /**
-     * @var string
+     * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
 
     /**
-     * @var string
+     * @var string $name
      *
      * @ORM\Column(name="email", type="string", length=255)
      */
@@ -38,7 +38,7 @@ class Post
     /**
      * @var string
      *
-     * @ORM\Column(name="text", type="text")
+     * @ORM\Column(name="text", type="string")
      */
     private $text;
 

@@ -2,18 +2,45 @@
 
 {% block post_list %} 
 
-	{% for Post in posts %}
-		<div class="entry">
-			<div id="preview">
-				{{ Entry.name }}
-				{{ Entry.email }}
-				{{ Entry.text|slice(0,50)}}
-			</div>
-                <form action={{ path('delete')}} method="">
-				<input type="submit">
-					Delete
-				</input>
-			</form>
-		</div>
-{% endfor %} 
+		<table style="width: 100px; text-align: center; position: center; margin: auto; font-family: Helvetica, sans-serif;
+		">
+    	<tbody>
+    		<thead style="background: #FFE5EA; border-radius:10px;">
+    			<th>Nr.</th>
+    			<th>Name</th>
+    			<th>Email</th>
+    			<th style="width:10px">Text</th>
+    			<th style="background: #FFFFFF;"></th>
+    		</thead>
+    		<tbody>
+    			{% for post in posts %}
+    				<tr>
+    					<td> {{ post.id }} </td>
+    					<td>{{ post.name }} </td>
+    					<td>{{ post.email }} </td>
+    					<td style="">{{ post.text}}</td>
+    				
+    				
+    					<td>
+    						<ul style="list-style-type: none;"
+    						>
+    							<li>
+    							<form action="{{ path('show', {'id' : post.id}) }}">
+    								<input type="submit" value="Show more"></input>
+    							</form>	
+    							</li>
+    							<li>
+    								<form action="{{ path('delete', {'id' : post.id}) }}" method="post">
+    									<input type="submit" value="Delete"</input>
+    								</form>
+    							</li>
+    						</ul>
+    					</td>
+    					
+    				</tr>
+    			{% endfor %}
+    		</tbody>
+		</table>
+		
+		
 {% endblock %}
