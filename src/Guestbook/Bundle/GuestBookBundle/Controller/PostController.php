@@ -31,10 +31,12 @@ class PostController extends Controller {
 			$em->flush();
 			return $this->redirectToRoute ( 'home' );
 		}
-			return $this->render('GuestbookBundle:Post:new.html.twig', array (
+		else {
+			return $this->render('GuestBookBundle:Post:new.html.twig', array (
 					'post' => $post,
 					'form' => $form->createView()
 			));
+		}
 	}
 	
 	public function deleteAction(Request $request, $id) {

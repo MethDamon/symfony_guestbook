@@ -1,13 +1,14 @@
+{% extends 'GuestBookBundle:Default:index.html.twig' %}
+{% block new_post_form %}
 
-<h1>Create a new Post</h1>
-
-<form action="{{ path('create') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
-    <p>
-        <input type="submit" value="Create"></input>
-    </p>
+<div class="form-group" style="width: 200px; margin: auto;">
+<form action="{{ path('create') }}" method="post" {{ form_enctype(form) }} class="form-horizontal">
+<div class=form-group">
+        {{ form_widget(form) }}
+        <input type="submit" class="btn btn-default"></input>
+ </div>
 </form>
-        <a href="{{ path('home') }}">
-            Back
-        </a>
+</div>
+
 </ul>
+{% endblock %}

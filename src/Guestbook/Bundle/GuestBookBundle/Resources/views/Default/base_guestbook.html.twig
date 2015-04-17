@@ -1,4 +1,5 @@
 {% extends '::base.html.twig' %}
+
 {% block title 'Symfony Guestbook' %}
 {% block body %}
 	<div
@@ -6,7 +7,7 @@
 	 		font-family: Helvetica, sans-serif;
            	float: left; 
            	background: #515151;
-           	height: 150px;
+           	height: wrap_content;
            	width: 100%;
           	margin-left: auto;
           	margin-right: auto;
@@ -14,24 +15,15 @@
           	color: #FFE5EA;
           	text-align: center;
           	border-radius: 10px;
+          	overflow: auto;
            	">
-			<h2>Guestbook</h2> 
-			<form action="{{ path('new') }}" method="get">
-			<input value="Create a new post" type="submit"
-				style="
-				margin-top: 0px;
-				height: 50px; 
-				width: 150px;
-				background: #FFFFFF;
-				margin-left: auto;
-				margin-right: auto;
-				color: #515151;
-				border-radius: 10px;	
-				border: none;
-				font-family: "Helvetica";
-				"
-     	   	</input>	
-            </div>
-	{% block post_list %}
-	{% endblock %}
+			<h2>Guestbook</h2>
+    
+			{% block create_button %}
+			{% endblock %}
+			</div>
+     	   	{% block new_post_form %}
+     	   	{% endblock %}	
+			{% block post_list %}
+			{% endblock %}
 {% endblock %}

@@ -2,15 +2,14 @@
 
 {% block post_list %} 
 
-		<table style="width: 100px; text-align: center; position: center; margin: auto; font-family: Helvetica, sans-serif;
-		">
+		<table class="table" >
     	<tbody>
-    		<thead style="background: #FFE5EA; border-radius:10px;">
+    		<thead">
     			<th>Nr.</th>
     			<th>Name</th>
     			<th>Email</th>
-    			<th style="width:10px">Text</th>
-    			<th style="background: #FFFFFF;"></th>
+    			<th>Text</th>
+    			<th></th>
     		</thead>
     		<tbody>
     			{% for post in posts %}
@@ -18,20 +17,15 @@
     					<td> {{ post.id }} </td>
     					<td>{{ post.name }} </td>
     					<td>{{ post.email }} </td>
-    					<td style="">{{ post.text}}</td>
+    					<td>{{ post.text}}</td>
     				
     				
     					<td>
     						<ul style="list-style-type: none;"
     						>
     							<li>
-    							<form action="{{ path('show', {'id' : post.id}) }}">
-    								<input type="submit" value="Show more"></input>
-    							</form>	
-    							</li>
-    							<li>
     								<form action="{{ path('delete', {'id' : post.id}) }}" method="post">
-    									<input type="submit" value="Delete"</input>
+    								<input type="submit" value="Delete"></input>
     								</form>
     							</li>
     						</ul>
@@ -41,6 +35,4 @@
     			{% endfor %}
     		</tbody>
 		</table>
-		
-		
 {% endblock %}

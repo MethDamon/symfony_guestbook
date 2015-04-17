@@ -3,6 +3,6 @@ home:
    defaults: {_controller: "GuestBookBundle:Default:index" }
    methods: [GET]
    
-post:
+posts:
   prefix: /posts
   resource: "@GuestBookBundle/Resources/config/post_routing.yml"

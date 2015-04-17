@@ -24,7 +24,7 @@ class DefaultController extends Controller
     //	$em->persist($example_post);
 		$em->flush();
     	$posts = $repo->findAll();
-        return $this->render('GuestBookBundle:Default:index.html.twig', array(
+        return $this->render('GuestBookBundle:Default:create_button.html.twig', array(
         		'posts' => $posts
         		));
         
