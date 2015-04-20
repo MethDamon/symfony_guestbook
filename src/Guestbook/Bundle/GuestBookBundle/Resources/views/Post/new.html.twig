@@ -1,11 +1,11 @@
-{% extends 'GuestBookBundle:Default:index.html.twig' %}
+{% extends 'GuestBookBundle:Default:base_guestbook.html.twig' %}
 {% block new_post_form %}
 
 <div class="form-group" style="width: 200px; margin: auto;">
 <form action="{{ path('create') }}" method="post" {{ form_enctype(form) }} class="form-horizontal">
 <div class=form-group">
         {{ form_widget(form) }}
-        <input type="submit" class="btn btn-default"></input>
+        <input type="submit" class="btn btn-default" value="Save"></input>
  </div>
 </form>
 </div>

@@ -41,11 +41,16 @@ class PostController extends Controller {
 	
 	public function deleteAction(Request $request, $id) {
 			$em = $this->getDoctrine()->getManager();
+			$em->flush();
 			$repo = $em->getRepository("GuestBookBundle:Post");
 			$post = $repo->find($id);
-			$em->remove($post);
-			$em->flush();
-			return $this->redirectToRoute ( 'home' );
+			if($post != null) {
+				$em->remove($post);
+				$em->flush();
+				
+				return $this->redirectToRoute('home');
+				
+			}		
 	}
 }
 

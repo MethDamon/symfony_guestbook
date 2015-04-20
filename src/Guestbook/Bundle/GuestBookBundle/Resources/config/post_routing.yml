@@ -10,12 +10,12 @@ create:
   methods: [POST]
   
 delete:
-  path: /delete/{id}
+  path: /{id}/delete
   defaults: {_controller: "GuestBookBundle:Post:delete"}
   methods: [POST]
 
 show:
-  path: /show/{id}
+  path: /{id}/show
   defaults: {_controller: "GuestBookBundle:Post:show"}
   methods: [GET]
   

@@ -20,6 +20,8 @@ class DefaultController extends Controller
     	$example_form = $this->createFormBuilder($example_post);
     	*/
     	$em = $this->getDoctrine()->getManager();
+    	$em->flush();
+    	 
     	$repo = $em->getRepository('GuestBookBundle:Post');
     //	$em->persist($example_post);
 		$em->flush();
