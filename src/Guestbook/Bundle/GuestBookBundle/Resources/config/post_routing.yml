@@ -13,6 +13,15 @@ delete:
   path: /{id}/delete
   defaults: {_controller: "GuestBookBundle:Post:delete"}
   methods: [POST]
+  
+edit:
+  path: /{id}/edit
+  defaults: {_controller: "GuestBookBundle:Post:edit"}
+  methods: [GET]
+  
+save:
+  path: /{id}/save
+  defaults: {_controller: "GuestBookBundle:Post:save"}
 
 show:
   path: /{id}/show

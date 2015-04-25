@@ -3,6 +3,7 @@
 namespace Guestbook\Bundle\GuestbookBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Post
@@ -18,6 +19,7 @@ class Post
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * 
      */
     private $id;
 
@@ -25,6 +27,7 @@ class Post
      * @var string $name
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank(message="Please enter your name")
      */
     private $name;
 
@@ -32,13 +35,16 @@ class Post
      * @var string $name
      *
      * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\Email(message="Please enter a valid email address")
+     
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="text", type="string")
+     * @ORM\Column(name="text", type="string", length=1000)
+     * @Assert\NotBlank(message="Please enter a message")
      */
     private $text;
 
